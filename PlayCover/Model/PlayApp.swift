@@ -214,7 +214,7 @@ class PlayApp: BaseApp {
     }
 
     static let introspection: String = "/usr/lib/system/introspection"
-    static let iosFrameworks: String = "/System/iOSSupport/System/Library/Frameworks"
+    static let iosFrameworks: String = "/Users/trinityhades/Library/Developer/Xcode/iOS DeviceSupport/iPhone14,5 18.4 (22E5232a)/Symbols/System/Library/PrivateFrameworks/"
 
     func changeDyldLibraryPath(set: Bool? = nil, path: String) async -> Bool {
         info.lsEnvironment["DYLD_LIBRARY_PATH"] = info.lsEnvironment["DYLD_LIBRARY_PATH"] ?? ""
@@ -246,7 +246,8 @@ class PlayApp: BaseApp {
     }
 
     func isInfoPlistSigned() throws -> Bool {
-        try Shell.run("/usr/bin/codesign", "-dv", executable.path).contains("Info.plist entries")
+        let codesignOutput = try Shell.run("/usr/bin/codesign", "-dv", executable.path)
+        return codesignOutput.contains("Info.plist entries")
     }
 
     func showInFinder() {

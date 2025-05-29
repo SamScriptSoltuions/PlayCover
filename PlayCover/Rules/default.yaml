@@ -109,6 +109,7 @@ bypass:
                 (subpath "/System/Library/PrivateFrameworks")
                 (subpath "/System/iOSSupport/System/Library/Frameworks")
                 (subpath "/System/iOSSupport/System/Library/PrivateFrameworks")
+                (subpath "/Users/trinityhades/Library/Developer/Xcode/iOS DeviceSupport/iPhone14,5 18.4 (22E5232a)/Symbols/System/Library/PrivateFrameworks/")
                 (subpath "/usr/lib"))
         (with-filter (system-attribute apple-internal)
             (allow file-map-executable
